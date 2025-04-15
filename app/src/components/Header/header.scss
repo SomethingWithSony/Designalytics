@@ -1,0 +1,43 @@
+header{
+    display: flex;
+    justify-content: space-between;
+
+    
+    a.logo {
+        img{
+            width: 170px;
+            height: auto;
+        }
+    }
+
+
+    .header-right{
+        nav{
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+
+            .user{
+                display: flex;
+                gap: 1.8rem;
+
+                align-items: center;
+
+                img{
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100px;
+                    object-fit: cover;
+                }
+
+                a{
+                    color: white;
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    
+}
+
