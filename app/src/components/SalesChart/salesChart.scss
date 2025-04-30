@@ -7,6 +7,11 @@
     padding-top: 2rem;
     padding-left: 3rem;
     border-radius: 1rem;
+
+    .sales-chart-wrapper{
+        height: 120px;
+        width: 100%;
+    }
     .sales{
         display: flex;
         align-items: center;
@@ -21,6 +26,26 @@
                 font-size: .25em;
             }
         }
-        
     }
+
+    @media only screen and (min-width: 620px) {
+
+        flex-direction: column;
+        padding: 0;
+        max-width: 286px;
+        height: 200px;
+        position: relative;
+
+        .sales{
+            p{
+                position: absolute;
+                left: 36px;
+                top: 20px;
+            }
+        }
+    }
+}
+
+.apexcharts-svg{
+    border-radius: 1rem;
 }

@@ -1,13 +1,15 @@
 import React from "react";
 
 import Button from '../Button/Button'
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.svg';
 
-import person from '../../assets/jane.jpg';
+import user from '../../assets/user.jpg';
+ 
+
 
 import './header.scss'
 
-function Header () {
+function Header ({ onMenuClick }) {
     return (
         <header>
             <a href="#" className="logo">
@@ -17,12 +19,15 @@ function Header () {
             <div className="header-right">
                 <nav>
                     <div className="user">
-                        <img src={person} alt="Profile Picture" />
+                        <img src={user} alt="Profile Picture" />
                         <a href="#">Jane Doe</a>
                     </div>
 
                     {/* <Button item="Signout" url="#" className="hide-mobile"  /> */}
-                    <a href="#" className="menu hide-tablet">
+                    <a href="#" className="menu hide-tablet" onClick={(e) => {
+                            e.preventDefault();
+                            onMenuClick();
+                        }}>
                         <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M27.5625 11C27.5625 10.2751 26.9749 9.6875 26.25 9.6875H1.75C1.02513 9.6875 0.4375 10.2751 0.4375 11C0.4375 11.7249 1.02513 12.3125 1.75 12.3125H26.25C26.9749 12.3125 27.5625 11.7249 27.5625 11Z" fill="white"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M27.5625 2.25C27.5625 1.52513 26.9749 0.9375 26.25 0.9375H1.75C1.02513 0.9375 0.4375 1.52513 0.4375 2.25C0.4375 2.97487 1.02513 3.5625 1.75 3.5625H26.25C26.9749 3.5625 27.5625 2.97487 27.5625 2.25Z" fill="white"/>
@@ -32,7 +37,7 @@ function Header () {
 
                 </nav>
             </div>
-        </header>
+        </header>      
     )
 }
 

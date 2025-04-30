@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
-import './salesChart.scss'
+import './earningsVisitorsChart.scss'
 
-class SalesChart extends Component {
+class EarningsVisitorsChart extends Component {
     constructor(props) {
         super(props);
 
@@ -15,18 +15,13 @@ class SalesChart extends Component {
                     zoom: {
                         enabled: false
                     },
-                    // background: '#5E85F8',
+                    // background: '#292B31',
                     fontFamily: 'Inter',
                     toolbar: {
                         show: false,
                     },
-
                 },
-                plotOptions: {
-                    bar: {
-                        borderRadius: 10,
-                    }
-                },
+                
 
                 grid: {
                     show: false,
@@ -38,7 +33,8 @@ class SalesChart extends Component {
                 },
                 markers: {
                     size: 2,
-                    colors: ["#FFFFFF"]
+                    colors: ["#5E85F8", "#01FFFF"],
+                    strokeColors: ["#5E85F8", "#01FFFF"]
                 },
                 legend: {
                     show: false,
@@ -62,13 +58,7 @@ class SalesChart extends Component {
 
 
                 },
-                yaxis: {
-                    labels: {
-                        show: false,
-                    },
 
-
-                },
                 tooltip: {
                     enabled: false,
                     x: {
@@ -76,40 +66,42 @@ class SalesChart extends Component {
                     },
 
                 },
-                colors: ["#FFFFFF"],
+                colors: ["#5E85F8", "#01FFFF"],
             },
 
 
             series: [
                 {
-                    name: "sales",
-                    data: [1, 1.5, 3, 4.5, 4.7, 6, 8],
-
-
+                    name: "Visitors",
+                    data: [300, 600, 210, 500, 900, 250, 200],
+                },
+                {
+                    name: "Earnings",
+                    data: [300, 350, 700, 680, 630, 520, 200],
                 }
+
             ]
         };
     }
 
     render() {
         return (
-            <div className="app sales-chart-container">
-                <div className="row">
-                    <div className="mixed-chart sales-chart">
-                        <div></div>
-                        <div className="sales">
-                            <p>13 <span>Sales</span></p>
-                        </div>
-                        <div className="sales-chart-wrapper">
-                            <Chart
-                                options={this.state.options}
-                                series={this.state.series}
-                                type="line"
-                                height="100%"
-                                width="100%"
-                            />
-                        </div>
+            <div className="earnings-visitiors-section">
+                <h2>Earnings & Visitors</h2>
+                <div className="app earnings-visitors-chart-container">
+                    <div className="row">
+                        <div className="mixed-chart ">
+                            <div className="earnings-visitors-chart-wrapper">
+                                <Chart
+                                    options={this.state.options}
+                                    series={this.state.series}
+                                    type="line"
+                                    height="100%"
+                                    width="100%"
+                                />
+                            </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,4 +109,4 @@ class SalesChart extends Component {
     }
 }
 
-export default SalesChart;
+export default EarningsVisitorsChart;

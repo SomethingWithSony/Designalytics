@@ -1,0 +1,41 @@
+.person-container{
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    
+
+    div.info{
+        display: flex;
+        gap: 1rem;
+
+        img{
+            width: 22px;
+            height: 22px;
+            object-fit: cover;
+            border-radius: 100px;
+        }
+
+        .text{
+           
+            color: white;
+            p.name{
+                font-weight: bold;
+                font-size: 1.8rem;
+            }
+            p.position{
+                color: #BAC2D9;
+                font-size: 1.4rem;
+            }
+        }
+    
+    }
+   
+    a{
+        
+        display: flex;
+        align-items: center;
+        background: #292B31;
+        padding: 1rem;
+        border-radius : .4rem;
+    }
+}
